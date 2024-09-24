@@ -1,9 +1,10 @@
 
 ## Comment 
-- optimizer를 RMSprop으로 바꾸고 weight_decay를 1e-5로 조정한 후에 learning rate scheduler를 Cosine AnnealingLR로 만드니까 원래 intro-dl에서 model은 test loss가 0.6618에서 0.5942로 감소하고, test accuracy가 65.99에서 72.54로 증가했다. 환경을 조금 변화 시키면 모델의 성능을 향상시킬 수 있다는 것이 재미있었다. Good
+- optimizer를 RMSprop으로 바꾸고 weight_decay를 1e-5로 조정한 후에 learning rate scheduler를 Cosine AnnealingLR로 만드니까 원래 intro-dl에서 model은 test loss가 0.6618에서 0.5942로 감소하고, test accuracy가 65.99에서 72.54로 증가했다. 환경을 조금 변화 시키면 모델의 성능을 향상시킬 수 있다는 것이 재미있었다.
+=> Good
 - 실험을 하면서 든 생각은.. 모델 기능 향상을 위해서 할 수 있는 일은 무한으로 많은데, 다 해보다 보면 끝이 없어서 이 실험을 언제 끝내는게 적절한 것인지 정하는 게 어려운 일이라고 생각했다.
-실험을 여러 번 하다보면, 예를 들어서 lr scheduler, optimizer 변경 등은 꼭 해봐야 해, 이런 "나만의 기준"이 생길텐데, 그런 걸 잘 기억해 두었다가 적절히 활용하는 게 좋을 것 같아요. 실험을 여러 번 하다보면 이런 상황에서는 이런 튜닝 방법이 좋았지/안 좋았지 같은 나만의 느낌과 기준이 생기기도 합니다. 아니면 lr scheduler, augmentation 등에 관한 논문을 찾아 읽고 선행 연구자 분들이 하신 실험 결과를 토대로 가장 성능이 잘 나오는 방식을 따라가는 것도 좋아요.
+=> 실험을 여러 번 하다보면, 예를 들어서 lr scheduler, optimizer 변경 등은 꼭 해봐야 해, 이런 "나만의 기준"이 생길텐데, 그런 걸 잘 기억해 두었다가 적절히 활용하는 게 좋을 것 같아요. 실험을 여러 번 하다보면 이런 상황에서는 이런 튜닝 방법이 좋았지/안 좋았지 같은 나만의 느낌과 기준이 생기기도 합니다. 아니면 lr scheduler, augmentation 등에 관한 논문을 찾아 읽고 선행 연구자 분들이 하신 실험 결과를 토대로 가장 성능이 잘 나오는 방식을 따라가는 것도 좋아요.
 - 열심히 하긴했는데 뭔가 실험에 잘못된 점이 있는 것 같다.
-- 잘못된 점이라기 보다는, 이 assignment1의 목표는 기존의 technique이 아닌 **나만의 technique**을 직접 만들어서 그 방법의 성능과 유용성을 체크해보는 것이었어요. 기존 방법을 열심히 사용해서 가장 좋은 성능을 냈으니 (잘했어요!), 이제는 나의 아이디어를 추가해보세요 :)
+=> Assignment1의 목표는 기존의 technique이 아닌 **나만의 technique**을 직접 만들어서 그 방법의 성능과 유용성을 체크해보는 것이었어요. 기존 방법을 열심히 사용해서 가장 좋은 성능을 냈으니 (잘했어요!), 이제는 나의 아이디어를 추가해보세요 :)
 - 모델링의 영향으로 accuracy가 올라간건지, 아니면 훈련을 반복하니까 성능이 좋아진건지 판단이 어려웠다. 이게 만약 잘못한 것이라면 어떻게 해야됐던건지가 궁금하다.
-이게 바로 ipynb / py 파일의 가장 큰 차이입니다. py 파일은 !python xyz.py 로 실행하고 나면 GPU가 초기화되서 gradient cache가 생기지 않는 반면, ipynb 파일은 gradient cache가 남아있어서 Kernel Restart / Shutdown을 꼭 해준 후에 다음 실험을 진행해주어야 합니다. 
+=> 이게 바로 ipynb / py 파일의 가장 큰 차이입니다. py 파일은 !python xyz.py 로 실행하고 나면 GPU가 초기화되서 gradient cache가 생기지 않는 반면, ipynb 파일은 gradient cache가 남아있어서 Kernel Restart / Shutdown을 꼭 해준 후에 다음 실험을 진행해주어야 합니다. 
