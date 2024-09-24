@@ -1,5 +1,5 @@
 
-< Comment >
+## Comment 
 optimizer를 RMSprop으로 바꾸고 weight_decay를 1e-5로 조정한 후에 learning rate scheduler를 Cosine AnnealingLR로 만드니까 원래 intro-dl에서 model은 test loss가 0.6618에서 0.5942로 감소하고, test accuracy가 65.99에서 72.54로 증가했다. 환경을 조금 변화 시키면 모델의 성능을 향상시킬 수 있다는 것이 재미있었다.
 >> Good
 실험을 하면서 든 생각은.. 모델 기능 향상을 위해서 할 수 있는 일은 무한으로 많은데, 다 해보다 보면 끝이 없어서 이 실험을 언제 끝내는게 적절한 것인지 정하는 게 어려운 일이라고 생각했다.
